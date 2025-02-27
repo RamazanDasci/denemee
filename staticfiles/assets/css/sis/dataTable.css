@@ -1,0 +1,101 @@
+.dataTables_length select {
+    margin-top: 10px !important;
+    width: 60px !important; 
+    font-size: 14px; 
+}
+
+.dataTable-custom-buttons {
+    display: flex;
+    gap: 10px; /* Butonlar arasında boşluk */
+    flex-wrap: wrap; /* Butonlar sığmazsa alt satıra geçer */
+    justify-content: flex-start;
+}
+
+.dataTables_filter {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.dataTables_length {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.dataTables_filter label {
+    margin-top: 10px;
+    margin-right: 10px; /* Arama kutusu ve butonlar arasında boşluk */
+}
+
+@media (max-width: 768px) {
+    /* DataTable genel stil */
+    .dataTables_wrapper {
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+
+
+    /* Tablo başlıkları */
+    table.dataTable thead th {
+        padding: 6px !important;
+    }
+
+    .dataTable-custom-buttons {
+        justify-content: center;
+        width: 100%;
+    }
+
+    .dataTables_filter {
+        width: 100%;
+        margin-top: 10px;
+        justify-content: center;
+    }
+
+    .dataTables_length {
+        width: 100%;
+        justify-content: center;
+        margin-top: 10px;
+    }
+
+    /* Butonlar arasındaki boşluğu ve hizalamayı iyileştir */
+    .dataTable-custom-buttons .btn {
+        margin-bottom: 10px;
+    }
+    
+    /* Arama kutusu daha geniş görünsün */
+    .dataTables_filter input {
+        width: 90%; /* Mobilde arama kutusunu daha geniş yap */
+        max-width: 600px; /* Maksimum genişliği sınırlayın */
+    }
+
+}
+
+
+
+
+/* DataTable hücre stilleri */
+.dataTable td {
+    max-width: 300px !important;
+    white-space: normal !important;
+    word-wrap: break-word !important;
+    vertical-align: top !important;
+}
+
+/* Başlık stilleri */
+.dataTable th {
+    max-width: 300px !important;
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+}
+
+/* Mobil responsive ayarları */
+@media (max-width: 768px) {
+    .dataTable td, .dataTable th {
+        max-width: 200px !important;
+        font-size: 0.9em;
+    }
+}

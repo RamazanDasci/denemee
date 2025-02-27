@@ -1,0 +1,140 @@
+{% load static %}
+{% block header %}
+
+<!-- Header -->
+<div class="header">
+    <div class="header-content">
+        <nav class="navbar navbar-expand">
+            <div class="collapse navbar-collapse justify-content-between">
+                <!-- Sol Taraf -->
+                <div class="header-left d-flex align-items-center">
+                    <a href="{% url 'dashboard' %}" class="logo logo-small">
+                        <img src="{% static 'assets/img/logo-industrial.png' %}" alt="Logo" width="40" height="40">
+                    </a>
+                    <h4 class="page-title mb-0 text-primary font-weight-bold">DEMİR ÇELİK YÖNETİM PANELİ</h4>
+                </div>
+
+                <!-- Sağ Taraf -->
+                <ul class="navbar-nav header-right align-items-center">
+                    <!-- Üretim İstatistikleri -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="productionStats" role="button" data-bs-toggle="dropdown">
+                            <i class="ti ti-chart-bar fs-18 text-warning"></i>
+                            <span class="badge bg-danger">+325</span>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-end p-3">
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <h6 class="mb-0">ANLIK ÜRETİM</h6>
+                                <small class="text-muted">24 Saat</small>
+                            </div>
+                            <div class="production-stats">
+                                <div class="d-flex justify-content-between mb-1">
+                                    <span>Çelik Levha</span>
+                                    <strong>2,450 ton</strong>
+                                </div>
+                                <div class="d-flex justify-content-between mb-1">
+                                    <span>Demir Profil</span>
+                                    <strong>1,890 ton</strong>
+                                </div>
+                                <div class="d-flex justify-content-between">
+                                    <span>Fire Oranı</span>
+                                    <strong class="text-danger">%1.2</strong>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+
+                    <!-- Sistem Uyarıları -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="systemAlerts" role="button" data-bs-toggle="dropdown">
+                            <i class="ti ti-alert-triangle fs-18 text-danger"></i>
+                            <span class="alert-status-dot"></span>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-end p-3">
+                            <h6 class="mb-3">AKTİF UYARILAR (3)</h6>
+                            <div class="alert-list">
+                                <div class="alert-item d-flex align-items-center mb-3">
+                                    <i class="ti ti-flame text-danger me-2"></i>
+                                    <div>
+                                        <p class="mb-0">Fırın #4 Sıcaklık Aşımı</p>
+                                        <small class="text-muted">2 dk önce</small>
+                                    </div>
+                                </div>
+                                <div class="alert-item d-flex align-items-center mb-3">
+                                    <i class="ti ti-battery-charging-2 text-warning me-2"></i>
+                                    <div>
+                                        <p class="mb-0">Enerji Kesintisi Riski</p>
+                                        <small class="text-muted">15 dk önce</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+
+                    <!-- Hızlı Erişim -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link" href="#" id="quickAccess" role="button" data-bs-toggle="dropdown">
+                            <i class="ti ti-bolt fs-18 text-success"></i>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-end p-3">
+                            <h6 class="mb-3">HIZLI ERİŞİM</h6>
+                            <div class="row g-2">
+                                <div class="col-6">
+                                    <a href="#" class="btn btn-sm btn-outline-secondary w-100 mb-2">
+                                        <i class="ti ti-report-analytics me-1"></i>Rapor
+                                    </a>
+                                </div>
+                                <div class="col-6">
+                                    <a href="#" class="btn btn-sm btn-outline-secondary w-100 mb-2">
+                                        <i class="ti ti-checklist me-1"></i>Kontrol
+                                    </a>
+                                </div>
+                                <div class="col-6">
+                                    <a href="#" class="btn btn-sm btn-outline-secondary w-100">
+                                        <i class="ti ti-settings me-1"></i>Ayarlar
+                                    </a>
+                                </div>
+                                <div class="col-6">
+                                    <a href="#" class="btn btn-sm btn-outline-secondary w-100">
+                                        <i class="ti ti-users me-1"></i>Ekipler
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+
+                    <!-- Kullanıcı Profili -->
+                    <li class="nav-item dropdown ms-2">
+                        <a href="#" class="dropdown-toggle user-nav" data-bs-toggle="dropdown">
+                            <span class="user-avatar">
+                                <img src="{% if request.user.profile_picture %}{{ request.user.profile_picture.url }}{% else %}{% static 'assets/img/default_user.png' %}{% endif %}" 
+                                      
+                                     alt="Profil" 
+                                     width="40">
+                            </span>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-end">
+                            <div class="user-header bg-industrial text-white p-3">
+                                <h6 class="mb-1">{{ request.user.get_full_name }}</h6>
+                                <small class="text-light">{{ request.user.get_role_display }}</small>
+                            </div>
+                            <a class="dropdown-item" >
+                                <i class="ti ti-user me-2"></i>Profilim
+                            </a>
+                            <a class="dropdown-item" >
+                                <i class="ti ti-settings me-2"></i>Ayarlar
+                            </a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item text-danger">
+                                <i class="ti ti-power me-2"></i>Çıkış Yap
+                            </a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+</div>
+<!-- /Header -->
+
+{% endblock header %}

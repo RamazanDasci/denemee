@@ -1,0 +1,81 @@
+#alerts-container {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    padding: 1rem;
+    z-index: 1050;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+/* Kenardan giriş animasyonu */
+@keyframes slideIn {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideOut {
+    from {
+        transform: translateX(0);
+        opacity: 1;
+    }
+
+    to {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+}
+
+/* Giriş animasyonu için sınıf */
+.slide-in {
+    animation: slideIn 0.5s ease-out;
+}
+
+/* Çıkış animasyonu için sınıf */
+.slide-out {
+    animation: slideOut 0.5s ease-in forwards;
+}
+
+/* Animasyonu bitiren ve kaldıran işlev */
+.custom-close {
+    cursor: pointer;
+}
+
+:root {
+    --error-color: #ff4d4f; /* Hata rengi */
+    --border-width: 1px; /* Çerçeve kalınlığı */
+    --border-radius: 6px; /* Köşe yuvarlaklığı */
+    --bg-light: rgba(255, 77, 79, 0.1); /* Hafif arka plan */
+}
+
+/* Hata alanı stili */
+.is-invalid {
+    position: relative;
+    border: var(--border-width) solid var(--error-color);
+    border-radius: var(--border-radius);
+    background-color: var(--bg-light);
+    font-size: 1rem;
+    padding: 0; /* Padding'i kaldırdık */
+    font-family: Arial, sans-serif;
+    color: #333;
+}
+
+
+
+
+/* Hata mesajı */
+.invalid-feedback {
+    color: var(--error-color);
+    font-size: 0.875rem;
+    margin-top: 6px;
+    display: block;
+    font-weight: bold;
+}

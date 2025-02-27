@@ -1,0 +1,87 @@
+.custom-dropdown-container {
+    position: relative;
+    width: 100%;
+}
+
+.custom-dropdown-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 10px;
+    background: #f9f9f9;
+}
+
+.custom-dropdown-body {
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    width: 100%;
+    z-index: 1000;
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+.custom-dropdown-body.active {
+    display: block;
+}
+
+.dropdown-group {
+    margin-bottom: 10px;
+}
+
+.dropdown-group-label {
+    padding: 5px 10px;
+    font-weight: bold;
+    background: #f1f1f1;
+    border-bottom: 1px solid #ddd;
+}
+
+.dropdown-item {
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #eee;
+    cursor: pointer;
+    background: white;
+    transition: background 0.3s ease;
+    
+}
+
+.dropdown-item:hover {
+    background: #f1f1f1;
+}
+
+.dropdown-item.selected {
+    background: #eeeeee;
+    font-weight: 500;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.edit-icon {
+    color: #007bff;
+    cursor: pointer;
+    margin-right: 10px; /* Sağda boşluk */
+}
+
+
+.delete-icon {
+    color: #dc3545;
+    cursor: pointer;
+    margin-right: 10px; /* Sağda boşluk */
+}
+
+.option-label {
+    flex-grow: 1 !important;
+}
+
+.dropdown-icon {
+    margin-left: 10px;
+}
+
+.select-checkbox {
+    display: none;
+}

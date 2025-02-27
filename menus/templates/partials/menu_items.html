@@ -1,0 +1,24 @@
+{% load menu_tags %}
+
+{% for menu in menu_items %}
+    <li class="{% if menu.has_children %}submenu{% endif %} {% if request.resolver_match.url_name == menu.url_name %}active{% endif %}">
+        <a  href="{% if menu.url_name %}{% url menu.url_name %}{% else %}javascript:void(0);{% endif %}"
+           class="d-flex justify-content-start" style="color: gray; background-color: transparent;">
+            {% if menu.icon %}
+                <i class="{{ menu.icon }} me-2" style="color: gray;"></i>
+            {% else %}
+                <i class="fa fa-circle fs-5" style="color: gray; background-color: transparent; width: auto; height: auto;"></i>
+            {% endif %}
+            <span class="menu-text lh-1" style="color: gray;">{{ menu.title }}</span>
+            {% if menu.has_children %}
+                <span class="menu-arrow ms-auto" style="color: gray;">
+                </span>
+            {% endif %}
+        </a>
+        {% if menu.has_children %}
+            <ul class="sub-menu" style="padding-left: {% get_menu_padding menu.level %}px; background-color: transparent;">
+                {% render_menu_items menu.get_children %}
+            </ul>
+        {% endif %}
+    </li>
+{% endfor %} 

@@ -1,0 +1,131 @@
+{% extends "partials/base.html" %}
+{% block content %}
+<div class="page-wrapper">
+    <div class="content">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12">
+                    <h1 class="mt-4 mb-4">Yönetici Karşılama Paneli <i class="fas fa-user-tie text-primary"></i></h1>
+                </div>
+            </div>
+
+            <div class="row">
+                <!-- Sol Panel: Hızlı Erişim, Takvim, Kullanıcı Bilgileri -->
+                <div class="col-md-3 mb-4">
+                    <div class="card shadow-sm h-100">
+                        <div class="card-body text-center">
+                            <h5 class="card-title text-primary">Hızlı İşlemler</h5>
+                            <div class="list-group list-group-flush">
+                                <a href="#" class="list-group-item list-group-item-action d-flex align-items-center">
+                                    <i class="fas fa-calendar-check me-2"></i> Mesai Takvimi
+                                </a>
+                                <a href="#" class="list-group-item list-group-item-action d-flex align-items-center">
+                                    <i class="fas fa-file-invoice me-2"></i> Bordrolarım
+                                </a>
+                                <a href="#" class="list-group-item list-group-item-action d-flex align-items-center">
+                                    <i class="fas fa-tasks me-2"></i> Görevlerim
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card shadow-sm mt-4">
+                        <div class="card-body">
+                            <h5 class="card-title text-primary">Takvim</h5>
+                            <p class="text-muted">Yaklaşan toplantılarınız burada gösterilecek.</p>
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item">Proje toplantısı - 14:00</li>
+                                <li class="list-group-item">Eğitim Semineri - 10:00</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Ana İçerik: İstatistikler, Son Aktiviteler, Hızlı Başlat -->
+                <div class="col-md-9">
+                    <div class="row">
+                        <div class="col-md-4 mb-4">
+                            <div class="card bg-info text-white shadow-sm">
+                                <div class="card-body">
+                                    <h5 class="card-title"><i class="fas fa-chart-line me-2"></i>Performans İstatistikleri</h5>
+                                    <div class="progress mb-3">
+                                        <div class="progress-bar bg-success" role="progressbar" style="width: 85%">Tamamlanan Görevler</div>
+                                    </div>
+                                    <div class="progress mb-3">
+                                        <div class="progress-bar bg-warning" role="progressbar" style="width: 65%">Devam Eden Projeler</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4 mb-4">
+                            <div class="card shadow-sm">
+                                <div class="card-body">
+                                    <h5 class="card-title text-primary"><i class="fas fa-bell me-2"></i>Son Aktivite</h5>
+                                    <ul class="list-group list-group-flush">
+                                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                                            Yeni görev atandı
+                                            <span class="badge bg-primary">2 saat önce</span>
+                                        </li>
+                                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                                            Bordro onaylandı
+                                            <span class="badge bg-success">1 gün önce</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4 mb-4">
+                            <div class="card shadow-sm">
+                                <div class="card-body">
+                                    <h5 class="card-title text-primary"><i class="fas fa-newspaper me-2"></i>Şirket Haberleri</h5>
+                                    <p class="text-muted">En son gelişmeler ve duyurular.</p>
+                                    <ul class="list-group list-group-flush">
+                                        <li class="list-group-item">Yeni ofis açılışı</li>
+                                        <li class="list-group-item">Eğitim programları başladı</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Hızlı Başlat -->
+                    <div class="card shadow-sm">
+                        <div class="card-body">
+                            <h5 class="card-title text-primary mb-4"><i class="fas fa-rocket me-2"></i>Hızlı Başlat</h5>
+                            <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+                                <button class="btn btn-outline-primary me-md-2" type="button">
+                                    <i class="fas fa-plus me-2"></i>Yeni Talep
+                                </button>
+                                <button class="btn btn-outline-success me-md-2" type="button">
+                                    <i class="fas fa-file-export me-2"></i>Rapor Al
+                                </button>
+                                <button class="btn btn-outline-warning" type="button">
+                                    <i class="fas fa-question-circle me-2"></i>Yardım
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Yapılacaklar Listesi -->
+                    <div class="card shadow-sm mt-4">
+                        <div class="card-body">
+                            <h5 class="card-title text-primary"><i class="fas fa-list-check me-2"></i>Yapılacaklar</h5>
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item d-flex justify-content-between align-items-center">
+                                    Raporu hazırla
+                                    <input type="checkbox" class="form-check-input">
+                                </li>
+                                <li class="list-group-item d-flex justify-content-between align-items-center">
+                                    E-posta yanıtla
+                                    <input type="checkbox" class="form-check-input">
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

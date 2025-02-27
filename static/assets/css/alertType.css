@@ -1,0 +1,33 @@
+/* Özel Endüstriyel Renkler */
+.bg-industrial {
+    background: linear-gradient(45deg, #2c3e50, #34495e);
+}
+
+.text-industrial {
+    color: #2c3e50 !important;
+}
+
+/* Alert Dot */
+.alert-status-dot {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    width: 8px;
+    height: 8px;
+    background: #e74c3c;
+    border-radius: 50%;
+}
+
+/* Production Stats */
+.production-stats {
+    background: #f8f9fa;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+/* User Header */
+.user-header {
+    border-bottom: 2px solid #e67e22;
+}
+
+

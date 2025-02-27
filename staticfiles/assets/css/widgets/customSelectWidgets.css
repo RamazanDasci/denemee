@@ -1,0 +1,32 @@
+.custom-selected-items {
+    border-radius: 0.375rem; /* Bootstrap form-control border radius */
+    padding: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    height: auto; /* Dinamik yükseklik */
+    overflow: hidden; /* Taşan kutucuklar gizlenecek */
+    background-color: #fff;
+    border: 1px solid #ced4da;
+}
+
+.chip {
+    display: inline-flex;
+    align-items: center;
+    border-radius: 10px;
+    padding: 5px 10px;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    font-size: 0.875rem;
+    white-space: nowrap; /* Tek satır görünüm */
+}
+
+.chip button {
+    background: none;
+    border: none;
+    font-size: 0.8rem;
+    line-height: 1;
+    cursor: pointer;
+    margin-left: 5px;
+}
